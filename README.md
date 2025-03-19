@@ -229,4 +229,4 @@ Les contre-mesures face à cela sont de limiter un trop grand nombre de requête
 Le rapport: 
 ![image](https://github.com/user-attachments/assets/430d19d1-18be-4f2d-82c4-355a01eceda5)
 
-
+Nous constatons que certaines requêtes ne sont pas passée (63) contre 2498 valide, pour cela j'ai analysé, les requêtes valide qui me renvoie un status 200.
