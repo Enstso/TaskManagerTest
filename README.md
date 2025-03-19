@@ -231,4 +231,4 @@ Le rapport:
 
 Nous constatons que certaines requêtes ne sont pas passée (63) contre 2498 valide, pour cela j'ai analysé, les requêtes valide qui me renvoie un status 200.
 
-Pour limiter cela, il sera nécessaire d'analyser status du retour de la requête, si il n'est pas à 200 donc non valide et que si en même temps il y a un trop grand nombre de requête simultané, il faudra alors limiter les requêtes afin de ne pas surcharger notre serveur web.
+Pour limiter cela, il sera nécessaire d'analyser status du retour de la requête, si il n'est pas à 200  non valide et que si en même temps il y a un trop grand nombre de requêtes simultanée, il faudra alors limiter les requêtes afin de ne pas surcharger notre serveur web.
