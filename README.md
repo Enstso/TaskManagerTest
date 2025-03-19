@@ -53,17 +53,17 @@ L'application permet de gérer des tâches avec les fonctionnalités suivantes :
 
 ### Tests à effectuer
 
-1. **testAddTask** : Vérifier que l'ajout d'une tâche fonctionne correctement.
-2. **testRemoveTask** : Vérifier que la suppression d'une tâche fonctionne correctement.
-3. **testGetTasks** : Vérifier que l'affichage de toutes les tâches est correct.
-4. **testGetTask** : Vérifier que la récupération d'une tâche spécifique fonctionne.
-5. **testRemoveInvalidIndexThrowsException** : Vérifier que la suppression d'une tâche avec un index invalide génère une exception.
-6. **testGetInvalidIndexThrowsException** : Vérifier que la récupération d'une tâche avec un index invalide génère une exception.
-7. **testTaskOrderAfterRemoval** : Vérifier que l'ordre des tâches est maintenu après la suppression d'une tâche.
+1. **testAddTask** : Vérifier que l'ajout d'une tâche fonctionne correctement. (Success)
+2. **testRemoveTask** : Vérifier que la suppression d'une tâche fonctionne correctement. (Success)
+3. **testGetTasks** : Vérifier que l'affichage de toutes les tâches est correct. (Success)
+4. **testGetTask** : Vérifier que la récupération d'une tâche spécifique fonctionne. (Success)
+5. **testRemoveInvalidIndexThrowsException** : Vérifier que la suppression d'une tâche avec un index invalide génère une exception. (Success)
+6. **testGetInvalidIndexThrowsException** : Vérifier que la récupération d'une tâche avec un index invalide génère une exception. (Success)
+7. **testTaskOrderAfterRemoval** : Vérifier que l'ordre des tâches est maintenu après la suppression d'une tâche. (Success)
 
 ### Tests E2E
 
-Automatisez le scénario suivant sur l'application de gestion de tâches :
+Automatisez le scénario suivant sur l'application de gestion de tâches avec Selenium :
 
 1. Ajout d'une nouvelle tâche.
 2. Vérification de son affichage dans la liste.
@@ -119,6 +119,8 @@ docker build -f .\docker\php\Dockerfile -t mon-apache-php .
 ```bash
 composer tests ou ./vendor/bin/phpunit tests (composer)
 ```
+6. Résultat, tous les tests sont en success:
+<img width="412" alt="image" src="https://github.com/user-attachments/assets/ec927331-3dbc-43a0-b7a4-17b73bdb53b0" />
 
 ### Tests E2E
 
@@ -141,6 +143,18 @@ Pour l'exercice 2:
 - Vérification de son affichage dans la liste
 - Suppression de la tâche et vérification de sa disparition
 
+addTask:
+
+<img width="638" alt="image" src="https://github.com/user-attachments/assets/43be9ad5-b3da-4a48-b02b-09eeac47bb31" />
+
+Résultat:
+
+<img width="779" alt="image" src="https://github.com/user-attachments/assets/5c04c2f4-7720-48a2-b140-79d37c8cf684" />
+
+removeTask:
+
+<img width="790" alt="image" src="https://github.com/user-attachments/assets/8b6c1b3d-85b3-4071-8d23-c4a5cefd6232" />
+
 Pour l'exercice 3:
 
 1. renommer index_ex3.html en index.html.
@@ -156,13 +170,38 @@ Pour l'exercice 3:
 
 4. On effectue les tests suivants avec selenium.
 
-Un localstorage a été mis en place, cela fais que après un rafraichissement de la page, la tâche sera toujours présent, vu que cette nouvelle fonctionnalité a été ajouter, nous voir si les ancciennes fonctionnalités sont toujours fonctionnels(Test de régression).
+Un localstorage a été mis en place, cela fais que après un rafraichissement de la page, la tâche sera toujours présent, vu que cette nouvelle fonctionnalité a été ajouter, nous verrons si les anciennes fonctionnalités sont toujours fonctionnelles (Test de régression).
 
 - Ajout d'une nouvelle tâche (après l'action rafraichir).
 - Vérification de son affichage dans la liste
 - Suppression de la tâche et vérification de sa disparition (après l'action rafraichir).
 
-### nalyse des performances avec k6
+![image](https://github.com/user-attachments/assets/dc6b1c1e-601b-416d-a12c-a13247ccd21a)
+
+Un rafraîchissement a été effectué, après l’ajout les tâches sont maitenant persistante.
+
+addTask:
+
+![image](https://github.com/user-attachments/assets/1056ce2d-0989-4ce7-b799-017500818142)
+
+La fonctionnalité addTask est toujours fonctionnel.
+
+deleteTask:
+
+![image](https://github.com/user-attachments/assets/24afbb64-9426-4533-a12a-3f997e1de054)
+
+
+La fonctionnalité deleteTask est toujours fonctionnel.
+
+### Analyse des performances avec k6
+
+Dans le fichier test.js, se trouve mon script.
+
+Stratégie de test :
+-	Monter à 50 utilisateurs en 30s
+-	Maintenir 50 utilisateurs pendant 1 minute
+-  Redescendre à 0 en 20s
+
 
 ### Lancer les tests de performance
 
@@ -179,7 +218,15 @@ Sur windows:
 ```bash
 docker run --rm -v ${PWD}\results:/usr/src/app/results -p 8080:8080 dock-k6
 ```
+![image](https://github.com/user-attachments/assets/5a8dc870-40db-4ac6-bc21-d830dc262c22)
 
 Nous pouvons apercevoir, que le serveur renvoie un timeout, due au nombreuse requête:
+
+![image](https://github.com/user-attachments/assets/ba2767d7-4b94-4ee0-9d6c-2348dd840d70)
+
+Les contre-mesures face à cela sont de limiter un trop grand nombre de requêtes simultanés, il sera nécessaire de mettre en place cela en prenant en compte les ressources du serveur hébergeant le service requêté.
+
+Le rapport: 
+![image](https://github.com/user-attachments/assets/430d19d1-18be-4f2d-82c4-355a01eceda5)
 
 
