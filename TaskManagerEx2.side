@@ -1,0 +1,190 @@
+{
+  "id": "32473827-7867-43a4-bf47-a3b5e1be8068",
+  "version": "2.0",
+  "name": "TaskManager",
+  "url": "http://127.0.0.1:5502/index.html",
+  "tests": [{
+    "id": "636804e6-de29-401e-a2cb-842d9056717b",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "60bc41c9-8cf6-4cbc-a464-dbc0adcb20c0",
+    "name": "addTask",
+    "commands": [{
+      "id": "12cc75ff-5e7e-444a-a6af-17bc1741d641",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5502/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "928a8f82-66d8-4673-a2c2-1ef8e30f4a70",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "868x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "47554123-8b29-4570-a749-f960dc2a6fd0",
+      "comment": "",
+      "command": "click",
+      "target": "id=taskInput",
+      "targets": [
+        ["id=taskInput", "id"],
+        ["css=#taskInput", "css:finder"],
+        ["xpath=//input[@id='taskInput']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a44b2a9-c344-407d-aaa7-feb222b66f49",
+      "comment": "",
+      "command": "type",
+      "target": "id=taskInput",
+      "targets": [
+        ["id=taskInput", "id"],
+        ["css=#taskInput", "css:finder"],
+        ["xpath=//input[@id='taskInput']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "task1"
+    }, {
+      "id": "d7de4c45-2ce7-47f2-9536-1d373bd1315b",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@onclick='addTask()']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ajouter')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3766c71d-9981-4ed1-9dfe-d27046128b64",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@onclick='addTask()']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ajouter')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "26eceb56-b7f0-4dc8-85ff-417f436e4815",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=button:nth-child(3)",
+      "targets": [
+        ["css=button:nth-child(3)", "css:finder"],
+        ["xpath=//button[@onclick='addTask()']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ajouter')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2ac09aee-99d0-41a3-bc25-cc59bc7dc269",
+    "name": "removeTask",
+    "commands": [{
+      "id": "bcffee42-c03d-4acc-9b43-a1a031ede7aa",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5502/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1999c63e-574e-40b3-a836-9da330c3f82a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "870x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5b9aee9-8ed3-43e5-866b-912b1086e295",
+      "comment": "",
+      "command": "click",
+      "target": "id=taskInput",
+      "targets": [
+        ["id=taskInput", "id"],
+        ["css=#taskInput", "css:finder"],
+        ["xpath=//input[@id='taskInput']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97e8b439-bb05-44b7-b5c6-42a00e9a8a72",
+      "comment": "",
+      "command": "type",
+      "target": "id=taskInput",
+      "targets": [
+        ["id=taskInput", "id"],
+        ["css=#taskInput", "css:finder"],
+        ["xpath=//input[@id='taskInput']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "task1"
+    }, {
+      "id": "a1ca2db1-5e00-4c44-b18c-94313b92b119",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@onclick='addTask()']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ajouter')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e161b19d-fe32-4771-9ee0-076ee83b7a68",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@onclick='addTask()']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ajouter')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d7a739c-3534-4e60-a799-c27a9e076a1f",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=button:nth-child(3)",
+      "targets": [
+        ["css=button:nth-child(3)", "css:finder"],
+        ["xpath=//button[@onclick='addTask()']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ajouter')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf76a344-eefc-434a-a6bf-0789952cf03a",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(2)",
+      "targets": [
+        ["css=button:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick='removeTask(this)']", "xpath:attributes"],
+        ["xpath=//div[@id='taskList']/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Supprimer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4774a45c-3f73-4ccd-a371-69d36106d060",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["636804e6-de29-401e-a2cb-842d9056717b"]
+  }],
+  "urls": [],
+  "plugins": []
+}
