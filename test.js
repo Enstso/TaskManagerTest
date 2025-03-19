@@ -16,7 +16,7 @@ export const options = {
 
 // Comportement simulé des utilisateurs
 export default function () {
-  let res = http.get("http://host.docker.internal:8000/");  // Changer ici
+  let res = http.get("http://host.docker.internal:8000/");  //J'utilise un conteneur pour pouvoir requété localhost:8000, je dois passer par cette url
   
   // Vérification du statut HTTP
   check(res, { "status was 200": (r) => r.status === 200 });
