@@ -86,6 +86,7 @@ Après l'ajout d'une nouvelle fonctionnalité (par exemple : ajout d'une échéa
 
 - Docker et Docker Compose pour configurer l'environnement
 - Selenium pour les tests E2E
+- K6 pour les tests de performance
 
 ### Installation
 
