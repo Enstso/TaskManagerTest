@@ -19,6 +19,18 @@ class TaskManagerTest extends TestCase
         $this->assertEquals($task, $taskManager->getTask(0));
     }
 
+    // Test if a task can be successfully removed
+    public function testRemoveTask()
+    {
+        $taskManager = new TaskManager();
+        $task = "task1";
+        $taskManager->addTask($task);
+        $taskManager->removeTask(0);
+
+        // Ensure the task list is empty after removal
+        $this->assertCount(0, $taskManager->getTasks());
+    }
+
     // Test retrieving tasks when no tasks have been added and when multiple tasks have been added
     public function testGetTasks()
     {
@@ -46,16 +58,16 @@ class TaskManagerTest extends TestCase
         $this->assertEquals([$task1, $task2, $task3], $tasks);
     }
 
-    // Test if a task can be successfully removed
-    public function testRemoveTask()
+    // Test if retrieving a specific task works correctly
+    public function testGetTask()
     {
         $taskManager = new TaskManager();
         $task = "task1";
+        $index = 0;
         $taskManager->addTask($task);
-        $taskManager->removeTask(0);
 
-        // Ensure the task list is empty after removal
-        $this->assertCount(0, $taskManager->getTasks());
+        // Verify that the task can be retrieved correctly
+        $this->assertEquals($task, $taskManager->getTask($index));
     }
 
     // Test if removing a task with an invalid index throws an OutOfBoundsException
@@ -77,17 +89,6 @@ class TaskManagerTest extends TestCase
         $taskManager->removeTask($index);
     }
 
-    // Test if retrieving a specific task works correctly
-    public function testGetTask()
-    {
-        $taskManager = new TaskManager();
-        $task = "task1";
-        $index = 0;
-        $taskManager->addTask($task);
-
-        // Verify that the task can be retrieved correctly
-        $this->assertEquals($task, $taskManager->getTask($index));
-    }
 
     // Test if retrieving a task from an empty task list throws an OutOfBoundsException
     public function testGetInvalidIndexThrowsException()
