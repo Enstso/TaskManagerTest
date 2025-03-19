@@ -90,6 +90,8 @@ Après l'ajout d'une nouvelle fonctionnalité (par exemple : ajout d'une échéa
 
 ### Installation
 
+Pour l'exercice 1 :
+
 1. Clonez ce repository sur votre machine locale :
 
    ```bash
