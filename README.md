@@ -1,7 +1,3 @@
-Voici un modèle de README pour votre projet de gestion de tâches, avec des sections adaptées aux exercices pratiques et à la structure de votre projet. Vous pouvez ajouter les captures d'écran à l'endroit approprié pour compléter la documentation.
-
----
-
 # TaskManagerTest
 
 ## Description
@@ -17,23 +13,31 @@ TaskManagerTest/
 ├── class/
 │   └── TaskManager.php          # Classe principale de gestion des tâches
 ├── docker/
-│   ├── k6/                      # Configuration pour les tests de charge avec k6
-│   └── php/                     # Configuration Docker pour l'environnement PHP
-├── results/                     # Résultats des tests
+│   ├── k6/                      # Dockerfile k6
+│   └── php/                     # Dockerfile php tests
 ├── tests/
 │   └── TaskManagerTest.php      # Tests fonctionnels de l'application
 ├── .gitignore                   # Fichier de configuration Git pour ignorer certains fichiers
 ├── composer.json                # Gestionnaire de dépendances pour le projet PHP
 ├── composer.lock                # Fichier de verrouillage des versions des dépendances
-└── index.html                   # Page d'accueil de l'application
+├── test.js  #Script js k6
+├── composer.lock                # Fichier de verrouillage des versions des dépendances
+
+├── index_exercice2.html                # index.html ex2
+├── index_exercice3.html                # index.html ex3
+├── TaskManagerEx2.side # projet selenium ex2
+└── TaskManagerEx3.side # projet selenium ex3
+
 ```
 
 ### Fichiers clés :
 
 - **TaskManager.php** : Fichier principal qui contient la logique de gestion des tâches (ajout, suppression, récupération des tâches).
 - **TaskManagerTest.php** : Tests unitaires et fonctionnels pour l'application.
-- **Dockerfile** dans les répertoires `docker/php` et `docker/k6` : Configuration Docker pour l'environnement PHP et pour effectuer des tests de charge.
-- **.gitignore** : Liste des fichiers et répertoires à ignorer par Git.
+- **TaskManagerEx2.side** : projet selenium ex2
+- **TaskManagerEx3.side** : projet selenium ex3
+- **test.js** : Script js k6
+
 
 ## Fonctionnalités principales
 
@@ -57,14 +61,13 @@ L'application permet de gérer des tâches avec les fonctionnalités suivantes :
 6. **testGetInvalidIndexThrowsException** : Vérifier que la récupération d'une tâche avec un index invalide génère une exception.
 7. **testTaskOrderAfterRemoval** : Vérifier que l'ordre des tâches est maintenu après la suppression d'une tâche.
 
-### Tests E2E avec Cypress ou Selenium
+### Tests E2E
 
 Automatisez le scénario suivant sur l'application de gestion de tâches :
 
-1. Connexion à l'application.
-2. Ajout d'une nouvelle tâche.
-3. Vérification de son affichage dans la liste.
-4. Suppression de la tâche et vérification de sa disparition.
+1. Ajout d'une nouvelle tâche.
+2. Vérification de son affichage dans la liste.
+3. Suppression de la tâche et vérification de sa disparition.
 
 ### Test de non-régression
 
@@ -151,7 +154,7 @@ Pour l'exercice 3:
 3. L'application sera accessible à l'adresse suivante :  
    `http://127.0.0.1:8080`
 
-4. On effectue les tests suivants avec selenium:
+4. On effectue les tests suivants avec selenium.
 
 Un localstorage a été mis en place, cela fais que après un rafraichissement de la page, la tâche sera toujours présent, vu que cette nouvelle fonctionnalité a été ajouter, nous voir si les ancciennes fonctionnalités sont toujours fonctionnels(Test de régression).
 
@@ -178,7 +181,5 @@ docker run --rm -v ${PWD}\results:/usr/src/app/results -p 8080:8080 dock-k6
 ```
 
 Nous pouvons apercevoir, que le serveur renvoie un timeout, due au nombreuse requête:
-
-Les contre-mesures face à cela sont de limiter un trop grand nombre de requêtes simultanés, il sera nécessaire de mettre en place cela en prenant ern compte les ressources du serveur hébergeant le service requété.
 
 

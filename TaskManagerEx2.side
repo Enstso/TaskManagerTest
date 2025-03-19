@@ -2,7 +2,7 @@
   "id": "32473827-7867-43a4-bf47-a3b5e1be8068",
   "version": "2.0",
   "name": "TaskManager",
-  "url": "http://127.0.0.1:5502/index.html",
+  "url": "http://127.0.0.1:8000/index.html",
   "tests": [{
     "id": "636804e6-de29-401e-a2cb-842d9056717b",
     "name": "Untitled",
@@ -14,7 +14,7 @@
       "id": "12cc75ff-5e7e-444a-a6af-17bc1741d641",
       "comment": "",
       "command": "open",
-      "target": "http://127.0.0.1:5502/index.html",
+      "target": "http://127.0.0.1:8000/index.html",
       "targets": [],
       "value": ""
     }, {
@@ -92,7 +92,7 @@
       "id": "bcffee42-c03d-4acc-9b43-a1a031ede7aa",
       "comment": "",
       "command": "open",
-      "target": "http://127.0.0.1:5502/index.html",
+      "target": "http://127.0.0.1:8000/index.html",
       "targets": [],
       "value": ""
     }, {
@@ -185,6 +185,6 @@
     "timeout": 300,
     "tests": ["636804e6-de29-401e-a2cb-842d9056717b"]
   }],
-  "urls": [],
+  "urls": ["http://127.0.0.1:8000/index.html"],
   "plugins": []
 }
