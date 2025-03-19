@@ -65,26 +65,26 @@ L'application permet de gérer des tâches avec les fonctionnalités suivantes :
 
 Automatisez le scénario suivant sur l'application de gestion de tâches avec Selenium :
 
-1. Ajout d'une nouvelle tâche.
-2. Vérification de son affichage dans la liste.
-3. Suppression de la tâche et vérification de sa disparition.
+1. Ajout d'une nouvelle tâche.(Success)
+2. Vérification de son affichage dans la liste.(Success)
+3. Suppression de la tâche et vérification de sa disparition.(Success)
 
 ### Test de non-régression
 
-Après l'ajout d'une nouvelle fonctionnalité (par exemple : ajout d'une échéance aux tâches), exécutez une suite de tests automatisés pour vérifier que les fonctionnalités existantes ne sont pas impactées.
+Après l'ajout d'une nouvelle fonctionnalité (par exemple : ajout d'une échéance aux tâches), exécutez une suite de tests automatisés pour vérifier que les fonctionnalités existantes ne sont pas impactées.(Success)
 
 ### Analyse des performances
 
 **k6** pour effectuer des tests de performance. Par exemple :
 
-1. Simulez plusieurs utilisateurs interagissant avec l'application (exemple : 50 utilisateurs ajoutant des tâches simultanément).
-2. Analysez les temps de réponse du serveur et identifiez les goulots d'étranglement.
+1. Simulez plusieurs utilisateurs interagissant avec l'application (exemple : 50 utilisateurs ajoutant des tâches simultanément).(Success)
+2. Analysez les temps de réponse du serveur et identifiez les goulots d'étranglement.(Success)
 
 ## Mise en place de l'environnement
 
 ### Prérequis
-
-- Docker et Docker Compose pour configurer l'environnement
+- Python
+- Docker pour configurer l'environnement
 - Selenium pour les tests E2E
 - K6 pour les tests de performance
 
